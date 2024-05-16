@@ -2,6 +2,7 @@ console.log('typeScript')
 
 // class
 class User {
+    protected num = 8  //this can be access within the class as well as it's extends
     private _courseCount = 1
     public email: string //everthing that don't mark in ts are public
     name: string
@@ -52,3 +53,11 @@ class Person {
 let person = new Person();
 person.age = 30; // Setting the age using the setter
 console.log(person.age); // Getting the age using the getter
+
+
+class subUser extends User {
+    // this class cannot able to access the private types in the user
+   getProtected() {
+    this.num = 6
+   }
+}

@@ -3,6 +3,7 @@ console.log('typeScript');
 // class
 class User {
     constructor(email, name) {
+        this.num = 8; //this can be access within the class as well as it's extends
         this._courseCount = 1;
         this.city = "Jaipur"; //only accessable with in the class we can use private or # keywords
         this.email = email;
@@ -45,3 +46,9 @@ class Person {
 let person = new Person();
 person.age = 30; // Setting the age using the setter
 console.log(person.age); // Getting the age using the getter
+class subUser extends User {
+    // this class cannot able to access the private types in the user
+    getProtected() {
+        this.num = 6;
+    }
+}
